@@ -1,8 +1,53 @@
-nav {
+@use '../../../../assets/styles/base/color' as colors;
+
+header {
     display: grid;
-     grid-template-columns:repeat(2,1fr);
+     grid-template-columns:repeat(3,1fr);
+     background-color:colors.$bg-primary-light;
      div {
-        border: 1px solid red;
-        height: 200px;
+        .logo{
+         padding: 0px;
+         margin:auto;
+         font-size:2rem;
+         color:colors.$brand-primary;
+         font-weight: bold;
+         width: 100px;
+         height: 50px;
+         object-fit: contain;
+      }
      }
+     div:nth-child(-n+3){
+      display: flex;
+      justify-content:center;
+      align-items: center;
+  
+     }
+}
+
+nav{
+   background-color: initial;
+ }
+ ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display:flex;
+  justify-content:center;
+  li {
+    display:inline-block;
+    padding:15px 10px;
+    margin: 10px 15px;
+    a{
+      text-decoration: none;
+      font-weight:500;
+      color:colors.$nav-text;
+    }
+    a:hover{
+      color:colors.$nav-text-hover;
+    }
+    a:active{
+      color: colors.$nav-text-active;
+    }
+  }
+
 }
