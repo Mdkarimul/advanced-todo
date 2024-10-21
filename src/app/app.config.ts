@@ -1,12 +1,32 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { routes } from './app.routes';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBiELEXIFcGij_Y7JxUXD4uSpA5A2v3BEU",
+  authDomain: "wapcrm-618ce.firebaseapp.com",
+  projectId: "wapcrm-618ce",
+  storageBucket: "wapcrm-618ce.appspot.com",
+  messagingSenderId: "354883501529",
+  appId: "1:354883501529:web:010918ae6966e704412dc8",
+  measurementId: "G-CWS8Q7GPWT"
+};
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-     provideRouter(routes)]
-
+     provideRouter(routes),
+     provideFirebaseApp(() => initializeApp(firebaseConfig)),
+     provideAuth(() => getAuth()),
+    
+    ],
+    
+    
+  
      
 };

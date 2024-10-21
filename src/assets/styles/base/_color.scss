@@ -122,7 +122,7 @@ $text-color-link-visited-light:var(--purple-400);
 $text-color-link-visited-dark:var(--purple-200);
 
 
-
+//bg color
 $bg-primary-light:var(--blue-400);
 $bg-secondary-ligth:var(--blue-300);
 $bg-tertiary-light:var(--blue-200);
@@ -131,6 +131,7 @@ $bg-primary-dark:var(--black-50);
 $bg-secondary-dark:var(--black-100);
 $bg-tertiary-dark:var(--black-200);
 
+//nav 
 $nav-bg:var(--blue-600);
 $nav-bg-surface-light:var(--blue-800);
 $nav-bg-surface-light-hover:var(--blue-900);
@@ -148,10 +149,11 @@ $nav-text-active:var(--black-100);
 $nav-text-selected:var(--black-300);
 $nav-text-disabled:var(--black-500);
 
+//neutral color
 $neutral-light:var(--black-50);
 $neutral-dark:var(--white-50);
 
-
+//text color
 $text-color-primary-light:var(--black-200);
 $text-color-secondary-light:var(--black-300);
 $text-color-tertiary-light:var(--black-400);
@@ -160,5 +162,18 @@ $text-color-primary-dark:var(--white-50);
 $text-color-secondary-dark:var(--white-100);
 $text-color-tertiary-dark:var(--white-200);
 
+
+//brand color
 $brand-primary:var(--purple-300);
 $brand-secondary:var(--purple-200);
+
+//input
+$input-subface-light:var(--white-100);
+$input-surface-dark:var(--black-100);
+$input-border-light:var(--black-300);
+$input-border-dark:var(--black-300);
+
+
+
+
+

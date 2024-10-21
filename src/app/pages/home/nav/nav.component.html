@@ -6,7 +6,7 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a routerLink="/">Home</a></li>
                     <li><a href="">Services</a></li>
                     <li><a href="">Pricing</a></li>
                     <li><a href="">About</a></li>
@@ -16,7 +16,7 @@
      
         </div>
         <div>
-         <app-primary-default-only-text [text]="'Login'"></app-primary-default-only-text>
+         <app-primary-default-only-text routerLink="/login"  [text]="'Login'"></app-primary-default-only-text>
          <app-btn-secondary-default-text [text]="'Signup'"></app-btn-secondary-default-text>
         </div>
     
