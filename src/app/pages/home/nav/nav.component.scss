@@ -5,6 +5,7 @@ header {
      grid-template-columns:repeat(3,1fr);
      background-color:colors.$bg-primary-light;
      height:80px;
+     border: 2px solid yellow;
      div {
         .logo{
          padding: 0px;
@@ -50,4 +51,10 @@ nav{
     }
   }
 
+}
+
+
+//RESPONSIVE DESIGN 
+@media (max-width:500px){
+  
 }
