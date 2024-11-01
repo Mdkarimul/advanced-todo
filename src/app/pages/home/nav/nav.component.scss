@@ -5,6 +5,7 @@ header {
      grid-template-columns:repeat(3,1fr);
      background-color:colors.$bg-primary-light;
      height:80px;
+<<<<<<< HEAD
 
      .logo-cont {
       display: flex;
@@ -24,6 +25,22 @@ header {
       border: 1px solid red;
      } 
      .btn-cont {
+=======
+     border: 2px solid yellow;
+     div {
+        .logo{
+         padding: 0px;
+         margin:auto;
+         font-size:2rem;
+         color:colors.$brand-primary;
+         font-weight: bold;
+         width: 100px;
+         height: 50px;
+         object-fit: contain;
+      }
+     }
+     div:nth-child(-n+3){
+>>>>>>> 1f5d00732db353d28731cae125b2846a3f9cc2e7
       display: flex;
       align-items: center;
      }
@@ -58,6 +75,7 @@ nav{
 }
 
 
+<<<<<<< HEAD
 //
 @media (max-width:992px){
   header {
@@ -68,4 +86,9 @@ nav{
     border: 2px solid red;
     display:none!important; 
   }
+=======
+//RESPONSIVE DESIGN 
+@media (max-width:500px){
+  
+>>>>>>> 1f5d00732db353d28731cae125b2846a3f9cc2e7
 }
