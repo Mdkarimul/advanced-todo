@@ -3,18 +3,20 @@
 
 .login-cont {
     width: 100%;
-    height:calc(100vh - 80px);
+    height:auto;
     background-color:colors.$neutral-light;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 2px solid red;
     .login {
-        width:calc(20vw);
-        height:60vh;
+        width:calc(25vw);
+        height:auto;
         background-color: colors.$bg-primary-light;
         border-radius: 5px;
         padding: 15px;
+        margin: 20% auto;
         h1{
             text-align: center;
             margin:20px auto;

@@ -5,21 +5,26 @@ header {
      grid-template-columns:repeat(3,1fr);
      background-color:colors.$bg-primary-light;
      height:80px;
-     div {
-        .logo{
-         padding: 0px;
-         margin:auto;
-         font-size:2rem;
-         color:colors.$brand-primary;
-         font-weight: bold;
-         width: 100px;
-         height: 50px;
-         object-fit: contain;
-      }
-     }
-     div:nth-child(-n+3){
+
+     .logo-cont {
       display: flex;
-      justify-content:center;
+      align-items: center;
+      .logo{
+        padding: 0px;
+        font-size:2rem;
+        color:colors.$brand-primary;
+        font-weight: bold;
+        width: 100px;
+        height: 50px;
+        object-fit: contain;
+        border: 2px solid green;
+     }
+     }  
+     .nav-cont {
+      border: 1px solid red;
+     } 
+     .btn-cont {
+      display: flex;
       align-items: center;
      }
 }
@@ -50,4 +55,17 @@ nav{
     }
   }
 
+}
+
+
+//
+@media (max-width:992px){
+  header {
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+   .nav-cont{
+    border: 2px solid red;
+    display:none!important; 
+  }
 }
