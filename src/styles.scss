@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use 'assets/styles/base/color' as colors;
 
 @import 'ngx-toastr/toastr';
 
@@ -174,4 +175,14 @@ state => default / hover / active / selected / disabled
 spacing => compact / default
 loading => false / true
 */
+
+.btn-primary {
+    padding: 10px 15px;
+    border: none;
+    background-color:var(--purple-500);
+    color:var(--white-200);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
 

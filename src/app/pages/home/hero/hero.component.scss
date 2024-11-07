@@ -3,7 +3,7 @@
 
 .hero{
     width: 100%;
-    height:calc(100vh - 80px);
+    height:calc(100vh - 60px);
     background-color:colors.$bg-secondary-ligth;
     display: flex;
     justify-content: center;
@@ -19,13 +19,6 @@
         font-size:type.$font-size-7xl;
         line-height: type.$line-height-lg;
         margin:15px auto;
-        span {
-            // color:colors.$neutral-dark;
-            // border:3px solid colors.$neutral-dark;
-            // padding:2px 4px;
-            // text-transform: capitalize;
-            // border-radius: 5px;
-        }
     }
     p {
         font-size:type.$font-size-xl;
@@ -38,7 +31,7 @@
 @media(max-width:992px){
     h1 {
         font-size:type.$font-size-2xl!important;
-        color: red!important;
         line-height: type.$line-height-2xs!important;
+        text-align:center;
     }
 }
