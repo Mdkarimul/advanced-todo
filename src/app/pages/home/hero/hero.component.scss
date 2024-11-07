@@ -29,9 +29,20 @@
 
 
 @media(max-width:992px){
+    .hero
+    >div {
+        padding: 0px;
+        border: 2px solid yellow;
+    }
     h1 {
         font-size:type.$font-size-2xl!important;
         line-height: type.$line-height-2xs!important;
+        text-align:center;
+    }
+    p {
+        font-size:type.$font-size-md;
+        color: colors.$text-color-secondary-light;
+        margin:0px;
         text-align:center;
     }
 }

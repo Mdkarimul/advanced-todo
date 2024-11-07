@@ -9,20 +9,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid red;
     .signup {
-        width:400px;
+        width: 25vw;
         height:auto;
         background-color: colors.$bg-primary-light;
         border-radius: 5px;
         padding:50px 15px;
-        margin: 20% auto;
+        margin: 15% auto;
         h1{
             text-align: center;
             margin:20px auto;
         }
         .form-group{
-            width: 90%;
+            width:100%;
             margin:10px auto;
           
             label {
@@ -51,8 +50,11 @@
 }
 
 @media (max-width:768px){
-    .signup {
-        width:80%;
+    .signup-cont{
+        .signup {
+            width:100%;
+          }
     }
+  
 }
 
