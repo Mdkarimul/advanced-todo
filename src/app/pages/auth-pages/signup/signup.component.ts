@@ -12,15 +12,22 @@ import { RouterLink } from '@angular/router';
 })
 export class SignupComponent {
 
+
   signupForm:FormGroup = new FormGroup({});
   private authService  = inject(AuthService);
   
-  constructor() {
-   this.initializeForm(); 
+
+  constructor(){
+    this.initializeForm();
+    
+  }
+  ngAfterViewInit(){
+
   }
 
   initializeForm() {
-    this.signupForm= new FormGroup({
+    this.signupForm = new FormGroup({
+      name:new FormControl(''),
       email:new FormControl(''),
       password:new FormControl('')
     })
@@ -28,9 +35,7 @@ export class SignupComponent {
 
   onSave(){
    const formValue =  this.signupForm.value;
-   console.log(formValue);
-   debugger;
-   this.authService.login(formValue);
+   this.authService.createNewUser(formValue);
     this.signupForm.reset();
   }
 

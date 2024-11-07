@@ -12,21 +12,20 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+
+
+
+
+
   loginForm:FormGroup = new FormGroup({});
   private authService  = inject(AuthService);
   
-
-  constructor(){
-    this.initializeForm();
-    
-  }
-  ngAfterViewInit(){
-
+  constructor() {
+   this.initializeForm(); 
   }
 
   initializeForm() {
-    this.loginForm = new FormGroup({
-      name:new FormControl(''),
+    this.loginForm= new FormGroup({
       email:new FormControl(''),
       password:new FormControl('')
     })
@@ -34,9 +33,12 @@ export class LoginComponent {
 
   onSave(){
    const formValue =  this.loginForm.value;
-   this.authService.createNewUser(formValue);
+   console.log(formValue);
+   debugger;
+   this.authService.login(formValue);
     this.loginForm.reset();
   }
+
 
 
 }

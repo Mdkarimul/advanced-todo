@@ -1,28 +1,31 @@
+
+
+
+
+
 @use '../../../../assets/styles/base/color' as colors;
 @use '../../../../assets/styles/base/typography' as type;
 
 .login-cont {
     width: 100%;
-    height:auto;
+    height:calc(100vh - 80px);
     background-color:colors.$neutral-light;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid red;
     .login {
-        width:calc(25vw);
+        width:400px;
         height:auto;
         background-color: colors.$bg-primary-light;
         border-radius: 5px;
-        padding: 15px;
-        margin: 20% auto;
+        padding:50px 15px;
         h1{
             text-align: center;
             margin:20px auto;
         }
         .form-group{
-            width: 100%;
+            width:90%;
             margin:10px auto;
           
             label {
@@ -47,5 +50,11 @@
                 outline: none;
             }
         }
+    }
+}
+
+@media (max-width:768px){
+    .login {
+        width:80%;
     }
 }

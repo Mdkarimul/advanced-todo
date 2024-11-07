@@ -1,16 +1,10 @@
 <header>
-<<<<<<< HEAD
         <div class="logo-cont">
-            <img class="logo" src="https://i.pinimg.com/736x/31/14/5e/31145e7925e59e8fb344f13422435dba.jpg"  alt="lgo">
+            <img width="80" class="logo" src="https://i.pinimg.com/736x/31/14/5e/31145e7925e59e8fb344f13422435dba.jpg"  alt="lgo">
         </div>
-        <div class="nav-cont">
-=======
-        <div>
-            <img class="logo" src="https://i.pinimg.com/736x/31/14/5e/31145e7925e59e8fb344f13422435dba.jpg"  alt="lgo">
-        </div>
-        <div >
->>>>>>> 1f5d00732db353d28731cae125b2846a3f9cc2e7
-            <nav>
+       
+        <div class="nav-cont-big">
+            <nav class="nav">
                 <ul>
                     <li><a routerLink="/">Home</a></li>
                     <li><a href="">Services</a></li>
@@ -20,9 +14,24 @@
                 </ul>
             </nav>
         </div>
+
+    
         <div class="btn-cont">
-         <app-primary-default-only-text routerLink="/login"  [text]="'Login'"></app-primary-default-only-text>
-         <app-btn-secondary-default-text [text]="'Signup'"></app-btn-secondary-default-text>
+            <i (click)="collapseMobileNav()" class='bx bx-menu'></i>
         </div>
+       
     
 </header>
+
+
+<div class="nav-cont-sm" [style]="collapseNav ? 'right:0px' : 'right:-1000px' ">
+    <nav class="nav">
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+</div>

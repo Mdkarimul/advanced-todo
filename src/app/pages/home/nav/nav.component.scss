@@ -4,61 +4,51 @@ header {
     display: grid;
      grid-template-columns:repeat(3,1fr);
      background-color:colors.$bg-primary-light;
-     height:80px;
-<<<<<<< HEAD
-
+     height:60px;
+     align-items: center;
      .logo-cont {
       display: flex;
       align-items: center;
       .logo{
-        padding: 0px;
-        font-size:2rem;
+        padding:0px 20px;
+        font-size:1.5rem;
         color:colors.$brand-primary;
         font-weight: bold;
-        width: 100px;
-        height: 50px;
         object-fit: contain;
-        border: 2px solid green;
      }
      }  
-     .nav-cont {
-      border: 1px solid red;
+     .nav-cont-big {
+      width: 100%;
      } 
+ 
      .btn-cont {
-=======
-     border: 2px solid yellow;
-     div {
-        .logo{
-         padding: 0px;
-         margin:auto;
-         font-size:2rem;
-         color:colors.$brand-primary;
-         font-weight: bold;
-         width: 100px;
-         height: 50px;
-         object-fit: contain;
+      display: flex;
+      justify-content:flex-end;
+      align-items: center;
+      padding: 10px;
+      i {
+        font-size:25px;
+        display:none;
+        cursor: pointer;
       }
      }
-     div:nth-child(-n+3){
->>>>>>> 1f5d00732db353d28731cae125b2846a3f9cc2e7
-      display: flex;
-      align-items: center;
-     }
 }
+
+
+
+
 
 nav{
    background-color: initial;
  }
  ul{
   list-style: none;
-  padding: 0px;
+  padding:10px;
   margin: 0px;
   display:flex;
-  justify-content:center;
   li {
     display:inline-block;
-    padding:15px 10px;
-    margin: 10px 15px;
+    padding: 10px 15px;
     a{
       text-decoration: none;
       font-weight:500;
@@ -71,24 +61,45 @@ nav{
       color: colors.$nav-text-active;
     }
   }
-
 }
 
 
-<<<<<<< HEAD
+.nav-cont-sm {
+  width: 100%;
+  height:auto;
+  position: fixed;
+  top:60px;
+  right:0px;
+  display: none;
+  background-color:#f4f4f4;
+  transition: all 0.5s;
+  .nav{
+    width: 100%!important;
+    height:auto;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ }
+
+
 //
 @media (max-width:992px){
   header {
     display: grid;
     grid-template-columns:repeat(2,1fr);
   }
-   .nav-cont{
-    border: 2px solid red;
-    display:none!important; 
+   .nav-cont-big{
+      border: 2px solid red;
+      display:none!important;
   }
-=======
-//RESPONSIVE DESIGN 
-@media (max-width:500px){
-  
->>>>>>> 1f5d00732db353d28731cae125b2846a3f9cc2e7
+  .nav-cont-sm {
+    display: block;
+  }
+  .btn-cont {
+    i {
+      display: block!important;
+    }
+  }
 }

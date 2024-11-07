@@ -1,26 +1,28 @@
 @use '../../../../assets/styles/base/color' as colors;
 @use '../../../../assets/styles/base/typography' as type;
 
-.login-cont {
+.signup-cont {
     width: 100%;
-    height:calc(100vh - 80px);
+    height:auto;
     background-color:colors.$neutral-light;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .login {
-        width:calc(20vw);
-        height:60vh;
+    border: 2px solid red;
+    .signup {
+        width:400px;
+        height:auto;
         background-color: colors.$bg-primary-light;
         border-radius: 5px;
-        padding: 15px;
+        padding:50px 15px;
+        margin: 20% auto;
         h1{
             text-align: center;
             margin:20px auto;
         }
         .form-group{
-            width: 100%;
+            width: 90%;
             margin:10px auto;
           
             label {
@@ -47,3 +49,10 @@
         }
     }
 }
+
+@media (max-width:768px){
+    .signup {
+        width:80%;
+    }
+}
+
