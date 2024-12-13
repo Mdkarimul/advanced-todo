@@ -4,10 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { NotificationsService } from '../../../core/services/notifications.service';
 import { RouterLink } from '@angular/router';
+import { NavComponent } from "../../home/nav/nav.component";
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NavComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

@@ -3,10 +3,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { NavComponent } from "../../home/nav/nav.component";
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NavComponent],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })

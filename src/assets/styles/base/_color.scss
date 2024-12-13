@@ -122,16 +122,44 @@ $text-color-link-visited-light:var(--purple-400);
 $text-color-link-visited-dark:var(--purple-200);
 
 
-//bg color
+//bg color variables =================================>
 $bg-primary-light:var(--blue-400);
-$bg-secondary-ligth:var(--blue-300);
-$bg-tertiary-light:var(--blue-200);
-
 $bg-primary-dark:var(--black-50);
+$bg-secondary-ligth:var(--blue-300);
 $bg-secondary-dark:var(--black-100);
+$bg-tertiary-light:var(--blue-200);
 $bg-tertiary-dark:var(--black-200);
 
-//nav 
+//brand colors variable ======================>>>>>>
+$brand-primary:var(--purple-200);
+$brand-secondary:var(--purple-600);
+
+
+
+//text color variables ===================================>>>>>>
+$text-primary-light:var(--black-100);
+$text-primary-dark:var(--white-50);
+$text-secondary-light:var(--black-300);
+$text-secondary-dark:var(--white-200);
+$text-tertiary-light:var(--black-500);
+$text-tertiary-dark:var(--white-400);
+
+
+$text-success-primary-light:var(--green-600);
+$text-success-primary-dark:var(--green-400);
+
+$text-warning-primary-light:var(--orange-300);
+$text-warning-primary-dark:var(--orange-600);
+
+$text-danger-primary-light:var(--red-300);
+$text-danger-primary-dark:var(--red-600);
+
+$text-danger-secondary-light:var(--red-100);
+$text-danger-secondary-dark:var(--red-300);
+
+
+
+//nav variables
 $nav-bg:var(--blue-600);
 $nav-bg-surface-light:var(--blue-800);
 $nav-bg-surface-light-hover:var(--blue-900);
@@ -172,6 +200,9 @@ $input-subface-light:var(--white-100);
 $input-surface-dark:var(--black-100);
 $input-border-light:var(--black-300);
 $input-border-dark:var(--black-300);
+
+
+//
 
 
 

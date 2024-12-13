@@ -1,0 +1,14 @@
+.main-content{
+    width: calc(100% - 250px);
+    height:100vh;
+    border: 1px solid red;
+    float: left;
+    padding: 10px;
+    transition: .3s ease-in-out;
+}
+.main-content.max {
+    width: calc(100% - 250px);
+}
+.main-content.min {
+    width: calc(100% - 70px);
+}
