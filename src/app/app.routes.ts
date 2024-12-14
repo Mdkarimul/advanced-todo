@@ -6,6 +6,8 @@ import { SignupComponent } from './pages/auth-pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
 import { LeftSidebarComponent } from './pages/dashboard/left-sidebar/left-sidebar.component';
 import { MainContentComponent } from './pages/dashboard/main-content/main-content.component';
+import { TodoComponent } from './pages/dashboard/todo/todo.component';
+import { OverviewComponent } from './pages/dashboard/overview/overview.component';
 
 export const routes: Routes = [
 
@@ -26,7 +28,14 @@ export const routes: Routes = [
     path:'dashboard',
     component:DashboardComponent,
     children:[
-     
+        {
+            path:'overview',
+            component:OverviewComponent
+        },
+     {
+        path:'todo',
+        component:TodoComponent
+     }
     ]
 }
 

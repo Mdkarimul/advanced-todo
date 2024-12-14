@@ -34,8 +34,6 @@ export class LoginComponent {
 
   onSave(){
    const formValue =  this.loginForm.value;
-   console.log(formValue);
-   debugger;
    this.authService.login(formValue);
     this.loginForm.reset();
   }

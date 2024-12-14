@@ -1,12 +1,12 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { SidenavService } from '../../../core/services/sidenav.service';
 import { AuthService } from '../../../core/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-left-sidebar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './left-sidebar.component.html',
   styleUrl: './left-sidebar.component.scss',
 })
@@ -24,15 +24,15 @@ export class LeftSidebarComponent {
   items = [
     {
 
-      routerLink: 'dashboard',
+      routerLink: 'overview',
       label: 'dashboard',
       icon: 'bx bxs-dashboard',
       isActive:true
     },
     {
-      routerLink: 'products',
+      routerLink: 'todo',
       icon: 'bx bxs-purchase-tag-alt',
-      label: 'products',
+      label: 'Create todo',
       isActive:false
     },
     {

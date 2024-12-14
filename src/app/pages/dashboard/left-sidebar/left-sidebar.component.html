@@ -10,7 +10,7 @@
 
       <ul>
         @for (item of items; track $index;let id = $index) {
-            <li [class]="item.label == 'logout' ? 'logout-btn' : ''" (click)="checkIsActive(id)" ><a [class]="item.isActive ?  'active' :''" ><i  class={{item.icon}}></i><span [style.display]="this.sideNavService.collapse() ? 'none' : 'block'">{{item.label}}</span></a></li>
+            <li [routerLink]="item.routerLink" [class]="item.label == 'logout' ? 'logout-btn' : ''" (click)="checkIsActive(id)" ><a [class]="item.isActive ?  'active' :''" ><i  class={{item.icon}}></i><span [style.display]="this.sideNavService.collapse() ? 'none' : 'block'">{{item.label}}</span></a></li>
         }
       </ul>
 

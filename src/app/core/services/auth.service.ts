@@ -38,7 +38,7 @@ export class AuthService {
     console.log(user);
     this.notification.successMessage('User login successfully !','Login user');
     setTimeout(()=>{
-     this.route.navigate(['dashboard']);
+     this.route.navigate(['dashboard/overview']);
     },5000)
    }).catch((error)=>{
     this.notification.errorMessage(error.code,error.message);

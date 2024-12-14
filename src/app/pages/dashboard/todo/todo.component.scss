@@ -1,0 +1,19 @@
+@use '../../../../assets/styles/base/color' as colors;
+
+.todo-container {
+    width: 100%;
+    height:fit-content;
+}
+.add-task {
+    padding: 10px 20px;
+    background-color:colors.$brand-primary;
+    color: colors.$text-primary-dark;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+    align-items: center;
+}
+

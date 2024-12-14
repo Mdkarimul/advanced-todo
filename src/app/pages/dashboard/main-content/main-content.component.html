@@ -1,3 +1,10 @@
 <div class="main-content" [class]="!this.sideNavService.collapse() ? 'max' : 'min'">
-    <h1>Test content</h1>
+ <header>
+    <h1>Advanced todo app</h1>
+ </header>
+ <section>
+    <router-outlet></router-outlet>
+ </section>
+ 
+  
 </div>

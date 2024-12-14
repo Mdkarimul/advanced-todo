@@ -1,3 +1,6 @@
+@use '../../../../assets/styles/base/color' as colors;
+
+
 .main-content{
     width: calc(100% - 250px);
     height:100vh;
@@ -11,4 +14,13 @@
 }
 .main-content.min {
     width: calc(100% - 70px);
+}
+header {
+background-color:colors.$bg-tertiary-light;
+padding: 10px;
+border-radius: 5px;
+}
+section {
+
+    padding: 20px 10px;
 }
