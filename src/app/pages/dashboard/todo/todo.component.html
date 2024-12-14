@@ -1,5 +1,9 @@
 <div class="todo-container">
     <div>
-        <button class="add-task">Add task<i class='bx bx-message-square-add'></i></button>
+        <button (click)="showModal()" class="add-task">Add task<i class='bx bx-message-square-add'></i></button>
     </div>
 </div>
+
+<ng-container class="modal-container" #container>
+
+</ng-container>
