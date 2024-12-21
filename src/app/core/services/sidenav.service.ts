@@ -19,6 +19,6 @@ export class SidenavService {
   }
 
   get sideNavWidth() {
-    return this.collapse() ? '70px' : '250px';
+    return this.collapse() ? '50px' : '200px';
   }
 }

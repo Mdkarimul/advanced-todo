@@ -24,6 +24,7 @@ export const appConfig: ApplicationConfig = {
      provideRouter(routes),
      provideFirebaseApp(() => initializeApp(firebaseConfig)),
      provideAuth(() => getAuth()),
+     provideFirestore(() => getFirestore()),
      provideAnimations(), // required animations providers
      provideToastr({
       timeOut:10000,

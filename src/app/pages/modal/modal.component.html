@@ -1,24 +1,36 @@
 <div class="modal-container">
     <div class="header">
-        <h3>Add task</h3>
+        <h3>Add new task</h3>
+        <i class='bx bx-x' (click)="close.emit()"></i>
     </div>
     <div class="content">
-        <div class="from-group">
-            <input class="title" type="text" name="name">
+        <div class="form-group">
+            <input placeholder="Title" class="title" required="required" [(ngModel)]="title" type="text" #titleV="ngModel" name="title">
+            
+            <div *ngIf="titleV.invalid && (titleV.dirty || titleV.touched)" >
+                <span *ngIf="titleV.hasError('required')" class="alert">
+                  Title is required !
+                </span>
+             </div>
         </div>
     
-        <div class="from-group">
-            <textarea class="description" rows="4" type="text" name="name"></textarea>
+        <div class="form-group">
+            <textarea placeholder="Description" class="description" required="required" [(ngModel)]="description" rows="4" #descriptionV="ngModel" type="text" name="description"></textarea>
+           <div *ngIf="descriptionV.invalid && (descriptionV.dirty || descriptionV.touched)" >
+              <span *ngIf="descriptionV.hasError('required')" class="alert">
+                Description is required !
+              </span>
+           </div>
         </div>
     
-        <div class="from-group">
+        <div class="btn-group">
             <button class="btn-outline">Duration</button><button class="btn-outline">Priority</button>
             <button class="btn-outline">Remainder</button>
         </div>
     </div>
     <div class="footer">
-        <button class="submit">Submit</button>
-        <button class="cancle">Cancle</button>
+        <button class="submit" (click)="submitForm()">Submit</button>
+        <button class="cancle" (click)="close.emit()">Cancle</button>
     </div>
 
 </div>

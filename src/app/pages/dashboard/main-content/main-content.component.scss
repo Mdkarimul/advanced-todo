@@ -1,5 +1,5 @@
 @use '../../../../assets/styles/base/color' as colors;
-
+@use '../../../../assets/styles/base/typography' as types;
 
 .main-content{
     width: calc(100% - 250px);
@@ -9,11 +9,16 @@
     padding: 10px;
     transition: .3s ease-in-out;
 }
+.main-content h1 {
+    font-size: 15px;
+    color: colors.$bg-neutral-secondary-dark;
+    font-weight:types.$font-weight-regular;
+}
 .main-content.max {
-    width: calc(100% - 250px);
+    width: calc(100% - 200px);
 }
 .main-content.min {
-    width: calc(100% - 70px);
+    width: calc(100% - 50px);
 }
 header {
 background-color:colors.$bg-tertiary-light;

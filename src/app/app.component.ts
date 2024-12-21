@@ -7,7 +7,7 @@ import { ajax } from 'rxjs/ajax';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HomeComponent,FormsModule],
+  imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -23,8 +23,6 @@ export class AppComponent {
     positions.subscribe({
       next:(result)=>console.log(result)
     })
-
-
   }
 
  

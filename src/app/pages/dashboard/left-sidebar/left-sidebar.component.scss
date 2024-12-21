@@ -49,6 +49,7 @@ ul {
              overflow: hidden;
              margin:0px 10px;
              border-radius: 5px;
+             font-weight:type.$font-weight-regular;
         }
         a.active{
             background-color: colors.$bg-tertiary-light;
