@@ -22,13 +22,48 @@
               </span>
            </div>
         </div>
+
+        <div class="select-time">
+            <div class="start-time">
+                <label for="appt">Select start time</label>
+                <input type="time" id="appt"  placeholder="hh/mm/ss" name="appt">
+            </div>
+            <div class="end-time">
+                <label for="appt">Select end time</label>
+                <input type="time" id="appt"  placeholder="hh/mm/ss" name="appt">
+            </div>
+        </div>
+
+        <div class="select-date">
+            <div class="start-time">
+                <label for="appt">Select start date</label>
+                <input type="date" id="appt"  placeholder="hh/mm/ss" name="appt">
+            </div>
+            <div class="end-time">
+                <label for="appt">Select end date</label>
+                <input type="date" id="appt"  placeholder="hh/mm/ss" name="appt">
+            </div>
+        </div>
     
         <div class="btn-group">
-            <button class="btn-outline">Duration</button><button class="btn-outline">Priority</button>
-            <button class="btn-outline">Remainder</button>
+           
+            
+            <select name="" id="">
+                <option value="">Priority</option>
+                <option value="">High</option>
+                <option value="">Medium</option>
+                <option value="">Low</option>
+            </select>
+            <select name="" id="">
+                <option value="">Remainder</option>
+                <option value="">True</option>
+                <option value="">False</option>
+               
+            </select>
         </div>
     </div>
     <div class="footer">
+  
         <button class="submit" (click)="submitForm()">Submit</button>
         <button class="cancle" (click)="close.emit()">Cancle</button>
     </div>

@@ -12,6 +12,12 @@ import { TodoService } from '../../../core/services/todo.service';
 
 export class TodoComponent {
   todoService = inject(TodoService);
+  
+
+
+  constructor() {
+    console.log(this.vcr());
+  }
 
   allTask:any[] = [];
 
@@ -20,16 +26,13 @@ export class TodoComponent {
   showModal(){
     this.vcr()?.clear();
    this.#componentRef =  this.vcr()?.createComponent(ModalComponent);
+   this.todoService.blurSignal.set(true);
    this.#componentRef?.instance.close.subscribe(()=>{
     this.#componentRef?.destroy();
+    this.todoService.blurSignal.set(false);
    })
    this.#componentRef?.instance.task.subscribe((data)=>{
-<<<<<<< HEAD
-    alert('karimul');
-    console.log(data)
-=======
     this.todoService.createTask(data);
->>>>>>> b4b1608f0ca9e4dc242fc79d8f819579eb6ac0cf
    })
   }
 
@@ -37,8 +40,8 @@ ngOnInit(){
  this.todoService.getAllTask().then((response)=>{
    this.allTask = response;
    console.log(this.allTask);
- });
-  
+ }); 
 }
+
 
 }

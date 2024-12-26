@@ -7,6 +7,7 @@ import { ajax } from 'rxjs/ajax';
 import { Auth } from '@angular/fire/auth';
 import { AuthService } from './core/services/auth.service';
 import { child } from '@angular/fire/database';
+import { TodoService } from './core/services/todo.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,6 +21,7 @@ export class AppComponent {
 
 router = inject(Router);
 authService = inject(AuthService);
+todoServie = inject(TodoService);
 
   ngAfterViewInit(){
 

@@ -28,8 +28,8 @@ export class LoginComponent {
 
   initializeForm() {
     this.loginForm= new FormGroup({
-      email:new FormControl(''),
-      password:new FormControl('')
+      email:new FormControl('aa@gmail.com'),
+      password:new FormControl('Md7861942@k')
     })
   }
 

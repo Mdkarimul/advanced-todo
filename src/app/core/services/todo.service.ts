@@ -1,5 +1,5 @@
 
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Firestore,addDoc,setDoc,collection, getDoc, getDocs,query, where, doc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import  { Todo } from '../models/todo';
@@ -15,6 +15,7 @@ export class TodoService {
 
   constructor() { }
 
+  public blurSignal = signal(false);
    private firestore = inject(Firestore);
    private notificationService = inject(NotificationsService);
 
@@ -61,10 +62,5 @@ export class TodoService {
    })
    return data;
   }
-
-
-
-
-
 
 }

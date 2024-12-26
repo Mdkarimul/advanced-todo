@@ -67,7 +67,7 @@ input,textarea {
 
 }
 .btn-group {
-    margin-bottom: 18px;
+    margin:18px auto;
 }
 .submit,.cancle {
     padding: 10px 15px;
@@ -85,7 +85,7 @@ input,textarea {
     padding:5px 10px;
     margin: auto 5px;
     border: 2px solid colors.$bg-neutral-primary-light;
-    border-radius: 10px;
+    border-radius:5px;
     font-size: types.$font-size-xs;
     cursor: pointer;
 }
@@ -93,5 +93,16 @@ input,textarea {
     color: colors.$text-danger-primary-light;
     font-size: types.$font-size-xs;
     font-weight:types.$font-weight-light;
+}
+.select-time,.select-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:10px;
+}
+.start-time,.end-time {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
 }
 
