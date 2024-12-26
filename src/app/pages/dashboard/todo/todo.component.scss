@@ -1,10 +1,31 @@
 @use '../../../../assets/styles/base/color' as colors;
-
+@use '../../../../assets//styles//base/typography' as typo;
 .todo-container {
     width: 100%;
     height:fit-content;
+    display: flex;
+    justify-content:flex-start;
+    column-gap:30px;
+    align-items: center;
 }
+
+.search-cont {
+    flex-grow: 2;
+}
+.search-input {
+    width:100%;
+    flex-grow: 2;
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid colors.$brand-primary;
+    font-family: "Roboto Slab", serif;
+    font-weight: typo.$font-weight-medium;
+
+}
+
 .add-task {
+    width: fit-content;
     padding: 10px 20px;
     background-color:colors.$brand-primary;
     color: colors.$text-primary-dark;
@@ -12,9 +33,51 @@
     cursor: pointer;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
-    column-gap: 5px;
+    justify-content:center;
     align-items: center;
+    column-gap: 5px;
+}
+
+.task-list-cont {
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height:auto;
+    margin:10px 0;
+    padding:50px 0;
+    h3{
+        text-align: left;
+    }
+}
+
+.task-list-cont ul {
+    display: block;
+    width: 100%;
+}
+.task-list-cont ul li {
+    width: 90%;
+    list-style: none;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 17px #ddd;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    column-gap: 5px;
+    border-radius: 5px;
+    div{
+        display: flex;
+        column-gap: 10px;
+        padding:5px 10px;
+        cursor: pointer;
+    }
+    i ,div i {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
 }
 
 

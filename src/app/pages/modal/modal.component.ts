@@ -19,7 +19,6 @@ description = '';
 close = output<void>();
 @Output() task = new EventEmitter<{title:string,description:string}>();
 submitForm() {
-
   const data = {
     title:this.title,
     description:this.description

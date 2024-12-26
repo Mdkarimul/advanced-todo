@@ -9,9 +9,11 @@ import { TodoService } from '../../../core/services/todo.service';
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss'
 })
-export class TodoComponent {
 
+export class TodoComponent {
   todoService = inject(TodoService);
+
+  allTask:any[] = [];
 
   vcr = viewChild('container',{read:ViewContainerRef});
   #componentRef?:ComponentRef<ModalComponent>; 
@@ -22,10 +24,16 @@ export class TodoComponent {
     this.#componentRef?.destroy();
    })
    this.#componentRef?.instance.task.subscribe((data)=>{
-    console.log(data)
+    this.todoService.createTask(data);
    })
   }
 
- 
+ngOnInit(){
+ this.todoService.getAllTask().then((response)=>{
+   this.allTask = response;
+   console.log(this.allTask);
+ });
+  
+}
 
 }

@@ -8,6 +8,7 @@ import { LeftSidebarComponent } from './pages/dashboard/left-sidebar/left-sideba
 import { MainContentComponent } from './pages/dashboard/main-content/main-content.component';
 import { TodoComponent } from './pages/dashboard/todo/todo.component';
 import { OverviewComponent } from './pages/dashboard/overview/overview.component';
+import { authGuard } from './core/gurards/auth-gurard';
 
 export const routes: Routes = [
 
@@ -27,6 +28,8 @@ export const routes: Routes = [
 {
     path:'dashboard',
     component:DashboardComponent,
+    canActivate:[authGuard],
+
     children:[
         {
             path:'overview',

@@ -5,6 +5,7 @@ import { AuthService } from '../../../core/services/auth.service';
 import { NotificationsService } from '../../../core/services/notifications.service';
 import { RouterLink } from '@angular/router';
 import { NavComponent } from "../../home/nav/nav.component";
+import { UserI } from '../../../core/models/userInterface';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -33,7 +34,7 @@ export class LoginComponent {
   }
 
   onSave(){
-   const formValue =  this.loginForm.value;
+   const formValue:UserI =  this.loginForm.value;
    this.authService.login(formValue);
     this.loginForm.reset();
   }

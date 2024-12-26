@@ -1,9 +1,23 @@
 <div class="todo-container">
-    <div>
-        <button (click)="showModal()" class="add-task">Add task<i class='bx bx-message-square-add'></i></button>
-    </div>
+       <div>
+        <button (click)="showModal()" class="add-task"> Add task <i class='bx bx-message-square-add'></i></button>
+       </div>
+        <div class="search-cont">
+            <input class="search-input" type="search" placeholder="Search task">
+        </div>
 </div>
 
 <ng-container class="modal-container" #container>
-
 </ng-container>
+
+<!-- show all task here-->
+
+<div class="task-list-cont">
+    <h3>All task</h3>
+    <ul>
+        @for (item of allTask; track $index) {
+    <li> <div><i class='bx bx-checkbox'></i><p>{{item.title}}</p></div>  <i class='dropdown bx bx-chevron-down' ></i></li>
+        }
+    </ul>
+  
+</div>
