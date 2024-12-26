@@ -19,6 +19,7 @@ description = '';
 close = output<void>();
 @Output() task = new EventEmitter<{title:string,description:string}>();
 submitForm() {
+<<<<<<< HEAD
      if(this.title.length || this.description.length){
       const data = {
         title:this.title,
@@ -28,6 +29,13 @@ submitForm() {
      }else {
       alert('Invalid form !');
      }
+=======
+  const data = {
+    title:this.title,
+    description:this.description
+  }
+this.task.emit(data);
+>>>>>>> b4b1608f0ca9e4dc242fc79d8f819579eb6ac0cf
 }
 
 }

@@ -24,8 +24,71 @@ header {
 background-color:colors.$bg-tertiary-light;
 padding: 10px;
 border-radius: 5px;
+border: 1px solid red;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
 }
 section {
 
     padding: 20px 10px;
 }
+
+.avatar,.avatar-mini {
+width:30px;
+height:30px;
+background-color:colors.$bg-neutral-primary-light;
+object-fit: contain;
+overflow: hidden;
+border-radius: 50%;
+text-align: center;
+box-shadow: 2px 4px 8px colors.$bg-neutral-primary-dark;
+outline: 2px solid white;
+cursor: pointer;
+}
+.avatar:hover {
+    outline: 1px solid white;
+}
+.avatar img {
+    padding:2px;
+}
+.profile {
+    position: absolute;
+    top:60px;
+    right:0px;
+    width:fit-content;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color:colors.$bg-neutral-primary-light;
+     > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .avatar-mini {
+    }
+    .user-details {
+        margin: 5px 10px;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 20px;
+    }
+    ul li {
+        padding:8px 8px;
+        border-radius: 5px;
+        margin: 4px auto;
+        cursor: pointer;
+    }
+    ul li:hover {
+        background-color: colors.$bg-neutral-secondary-light;
+    }
+    ul li a {
+        text-decoration: none;
+    }
+}
+
+

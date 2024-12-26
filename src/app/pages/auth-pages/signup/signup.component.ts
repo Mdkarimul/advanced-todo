@@ -3,41 +3,35 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { NavComponent } from "../../home/nav/nav.component";
+import { NavComponent } from '../../home/nav/nav.component';
+import { UserI } from '../../../core/models/userInterface';
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink, NavComponent],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss'
+  styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
+  signupForm: FormGroup = new FormGroup({});
+  private authService = inject(AuthService);
 
-
-  signupForm:FormGroup = new FormGroup({});
-  private authService  = inject(AuthService);
-  
-
-  constructor(){
+  constructor() {
     this.initializeForm();
-    
   }
-  ngAfterViewInit(){
-
-  }
+  ngAfterViewInit() {}
 
   initializeForm() {
     this.signupForm = new FormGroup({
-      name:new FormControl(''),
-      email:new FormControl(''),
-      password:new FormControl('')
-    })
+      name: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+    });
   }
 
-  onSave(){
-   const formValue =  this.signupForm.value;
-   this.authService.createNewUser(formValue);
+  onSave() {
+    const formValue: UserI = this.signupForm.value;
+    this.authService.createNewUser(formValue);
     this.signupForm.reset();
   }
-
 }

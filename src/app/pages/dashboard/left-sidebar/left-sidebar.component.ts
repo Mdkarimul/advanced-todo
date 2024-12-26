@@ -1,16 +1,25 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { SidenavService } from '../../../core/services/sidenav.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-left-sidebar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule],
   templateUrl: './left-sidebar.component.html',
   styleUrl: './left-sidebar.component.scss',
 })
-export class LeftSidebarComponent {
+export class LeftSidebarComponent implements OnInit {
+
+  constructor(){
+
+  }
+
+
+  ngOnInit(): void {
+  }
   @Output() collapse = new EventEmitter<boolean>(false);
 
   sideNavService = inject(SidenavService);
@@ -48,7 +57,7 @@ export class LeftSidebarComponent {
       isActive:false
     },
     {
-      routerLink:'logout',
+      routerLink:'',
       icon: 'bx bx-log-in-circle',
       label:'logout',
       isActive:false
@@ -57,10 +66,8 @@ export class LeftSidebarComponent {
 
   checkIsActive(id:number){
     if(id ===this.items.length - 1 ){
+      console.log(this.authService.logout());
       return;
-      if(this.authService.logout()){
-  
-      }
     }
     this.items.forEach((element,index,array)=>{
       if(id===index) {

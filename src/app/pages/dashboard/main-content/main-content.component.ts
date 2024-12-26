@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { SidenavService } from '../../../core/services/sidenav.service';
 import { RouterOutlet } from '@angular/router';
 import { NgStyle } from '@angular/common';
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-main-content',
@@ -16,11 +17,26 @@ export class MainContentComponent {
   sideNavService = inject(SidenavService);
   
 
+  collapseProfile = signal<boolean>(false);
   constructor(){
-
+    console.log();
   }
+
+
+  ngOnInit(){
+ 
+  }
+
+  
+
+ 
+
   ngAfterViewInit(){
 
+  }
+
+  showProfile(){
+    this.collapseProfile.set(!this.collapseProfile());
   }
   
 }
