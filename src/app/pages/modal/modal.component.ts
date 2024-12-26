@@ -19,12 +19,15 @@ description = '';
 close = output<void>();
 @Output() task = new EventEmitter<{title:string,description:string}>();
 submitForm() {
-
-  const data = {
-    title:this.title,
-    description:this.description
-  }
-this.task.emit(data);
+     if(this.title.length || this.description.length){
+      const data = {
+        title:this.title,
+        description:this.description
+      }
+    this.task.emit(data);
+     }else {
+      alert('Invalid form !');
+     }
 }
 
 }

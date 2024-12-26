@@ -22,6 +22,7 @@ export class TodoComponent {
     this.#componentRef?.destroy();
    })
    this.#componentRef?.instance.task.subscribe((data)=>{
+    alert('karimul');
     console.log(data)
    })
   }
