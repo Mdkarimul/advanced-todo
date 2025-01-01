@@ -69,6 +69,14 @@ input,textarea {
 .btn-group {
     margin:18px auto;
 }
+.btn-group select {
+    padding: 10px 5px;
+    margin: auto 5px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+
 .submit,.cancle {
     padding: 10px 15px;
     margin: 0px 5px;
@@ -99,10 +107,23 @@ input,textarea {
     justify-content: space-between;
     margin-bottom:10px;
 }
-.start-time,.end-time {
+.start-time,.end-time,.start-date, .end-date {
     width: 45%;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+}
+
+.select-time .start-time label,
+.select-time .end-time label,
+.select-date .start-date label,
+.select-date .end-date label {
+    font-size:types.$font-size-xs;
+}
+
+.select-date input , .select-time input {
+    padding: 0px 8px;
+    border-radius: 3px;
+    height:40px;
 }
 

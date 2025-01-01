@@ -23,6 +23,7 @@ export class TodoComponent {
 
   vcr = viewChild('container',{read:ViewContainerRef});
   #componentRef?:ComponentRef<ModalComponent>; 
+
   showModal(){
     this.vcr()?.clear();
    this.#componentRef =  this.vcr()?.createComponent(ModalComponent);
@@ -33,14 +34,27 @@ export class TodoComponent {
    })
    this.#componentRef?.instance.task.subscribe((data)=>{
     this.todoService.createTask(data);
+    // setTimeout(()=>{
+    //   alert(this.todoService.formState());
+    //   if(this.todoService.formState()){
+    //     this.#componentRef?.destroy();
+    //   }else {
+    //     this.getAllTask();
+    //   }
+    // },500)
+  
    })
   }
 
 ngOnInit(){
- this.todoService.getAllTask().then((response)=>{
-   this.allTask = response;
-   console.log(this.allTask);
- }); 
+this.getAllTask()
+}
+
+getAllTask() {
+  this.todoService.getAllTask().then((response)=>{
+    this.allTask = response;
+    console.log(this.allTask);
+  }); 
 }
 
 
