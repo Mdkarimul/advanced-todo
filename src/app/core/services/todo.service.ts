@@ -1,7 +1,7 @@
 
 import { inject, Injectable, signal } from '@angular/core';
-import { Firestore,addDoc,setDoc,collection, getDoc, getDocs,query, where, doc } from '@angular/fire/firestore';
-import { from, Observable, single } from 'rxjs';
+import { Firestore,addDoc,setDoc,collection, getDoc, getDocs,query, where, doc, updateDoc } from '@angular/fire/firestore';
+import { from, Observable, of, single } from 'rxjs';
 import  { Todo } from '../models/todo';
 import { NotificationsService } from './notifications.service';
 
@@ -24,6 +24,7 @@ export class TodoService {
 
   //  Create a new task here==================>
    async createTask(data:any) {
+    console.log(data);
     try {
       const check =  this.checkTask(data);
      check.then(async (response)=>{
@@ -65,9 +66,49 @@ export class TodoService {
    let data:any[] = [];
    const querySnapShot = await getDocs(collection(this.firestore,'Task'));
    querySnapShot.forEach((doc)=>{
-   data.push(doc.data());
+    const dataWithId = {
+      ...doc.data(),
+      id:doc.id
+    }
+   data.push(dataWithId);
    })
    return data;
   }
 
+  async getDataByTitle(title:string):Promise<any>{
+      const q = await query(collection(this.firestore,'Task'), where('title', 'in', [title]));
+      const querySnapShot = await getDocs(q);
+      if(querySnapShot.empty){
+       throw new Error("Data not found !");
+      }
+      let data;
+      querySnapShot.forEach((doc)=>{
+        data = doc.data();
+      })
+      return data;
+  }
+
+
+  async updateTaskStatus(title:string){
+    const collectionRef =  collection(this.firestore,'Task');
+    const q = query(collectionRef,where('title','==',title));
+    try {
+        const querySnapShot =await getDocs(q);
+         querySnapShot.forEach( async (docSnapshot)=>{
+          const docRef =  doc(this.firestore,'Task',docSnapshot.id);
+          await updateDoc(docRef,{
+            status:'dued'
+          })
+         })
+         return 'Document updated successfully !';
+    }catch(error) {
+         return 'Failed to update document !';
+    }
+  
 }
+
+
+
+}
+
+

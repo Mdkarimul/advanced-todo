@@ -1,23 +1,78 @@
 <div class="todo-container">
-       <div>
-        <button (click)="showModal()" class="add-task"> Add task <i class='bx bx-message-square-add'></i></button>
-       </div>
-        <div class="search-cont">
-            <input class="search-input" type="search" placeholder="Search task">
-        </div>
+  <div>
+    <button (click)="showModal()" class="add-task">
+      Add task <i class="bx bx-message-square-add"></i>
+    </button>
+  </div>
+  <div class="search-cont">
+    <input
+      (input)="getInput($event)"
+      #searchInput
+      (change)="hideOption(searchInput)"
+      (focusin)="showOption()"
+      class="search-input"
+      type="search"
+      placeholder="Search task"
+    />
+    <button class="filter-btn">
+      <i class="bx bx-filter"></i>
+    </button>
+
+    @if(searchState()){
+    <div class="search-option">
+      <ul>
+        @for (item of searchItem; track $index) {
+        <li #li as li (click)="readSearchItem(searchInput, li)">
+          {{ item.title }}
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
 </div>
 
-<ng-container class="modal-container" #container>
-</ng-container>
+<ng-container class="modal-container" #container> </ng-container>
 
 <!-- show all task here-->
 
 <div class="task-list-cont">
+  <div class="task-header">
     <h3>All task</h3>
-    <ul>
-        @for (item of allTask; track $index) {
-    <li> <div><i class='bx bx-checkbox'></i><p>{{item.title}}</p></div>  <i class='dropdown bx bx-chevron-down' ></i></li>
-        }
-    </ul>
-  
+    <div>
+      <label for="">Action</label>
+      <select class="status" name="" id="">
+        <option value="">Action</option>
+        <option value="">Edit</option>
+        <option value="">Delete</option>
+      </select>
+    </div>
+  </div>
+
+  <ul>
+    @for (item of allTask; track $index) {
+      {{item}}
+      <a (click)="seeTaskDetails(item.id)">
+        <li>
+          <div>
+            <i class="bx bx-checkbox"></i>
+            <p class="title">{{ item.title }}</p>
+            <p
+              class="status"
+              [class]="item.status == 'pending' ? 'pending' : 'completed'"
+            >
+              {{ item.status }}
+            </p>
+          </div>
+    
+          @if(true){
+          <div class="more-details">
+            <span>Start time : {{ item.start_date.seconds | date:'medium'}}</span>
+            <span>End time : {{item.end_date.seconds | date:'medium'}}</span>
+          </div>
+          }
+        </li>
+      </a>
+    }
+  </ul>
 </div>

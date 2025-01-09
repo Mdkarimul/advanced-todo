@@ -31,12 +31,11 @@
     }
     i:hover {
         background-color: colors.$bg-neutral-secondary-light;
-       
     }
     h3 {
         margin-bottom:8px;
-        color: colors.$bg-neutral-primary-dark;
-        font-size: types.$font-size-sm;
+        color: colors.$bg-neutral-secondary-dark;
+        font-size: types.$font-size-md;
 
     }
 }

@@ -9,39 +9,43 @@ import { MainContentComponent } from './pages/dashboard/main-content/main-conten
 import { TodoComponent } from './pages/dashboard/todo/todo.component';
 import { OverviewComponent } from './pages/dashboard/overview/overview.component';
 import { authGuard } from './core/gurards/auth-gurard';
+import { TaskDetailsComponent } from './pages/dashboard/task-details/task-details.component';
 
 export const routes: Routes = [
-
-
-{
-    path:'',
-    component:HomeComponent
-},
-{
-    path:'login',
-    component:LoginComponent
-},
-{
-    path:'signup',
-    component:SignupComponent
-},
-{
-    path:'dashboard',
-    component:DashboardComponent,
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
     canActivate:[authGuard],
-
-    children:[
-        {
-            path:'overview',
-            component:OverviewComponent
-        },
-     {
-        path:'todo',
-        component:TodoComponent
-     }
-    ]
-}
-
-
-
+    children: [
+      {
+        path: 'overview',
+        component: OverviewComponent,
+      },
+      {
+        path: 'todo',
+        component: TodoComponent,
+      },
+      {
+        path:'taskdetails',
+        component:TaskDetailsComponent
+      }
+    ],
+  },
 ];

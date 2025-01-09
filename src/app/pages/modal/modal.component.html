@@ -6,7 +6,6 @@
     <div class="content">
         <div class="form-group">
             <input placeholder="Title" class="title" required="required" [(ngModel)]="title" type="text" #titleV="ngModel" name="title">
-            
             <div *ngIf="titleV.invalid && (titleV.dirty || titleV.touched)" >
                 <span *ngIf="titleV.hasError('required')" class="alert">
                   Title is required !
@@ -52,7 +51,6 @@
         </div>
     </div>
     <div class="footer">
-  
         <button class="submit" (click)="submitForm()">Submit</button>
         <button class="cancle" (click)="close.emit()">Cancle</button>
     </div>

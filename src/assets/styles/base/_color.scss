@@ -147,8 +147,7 @@ $text-primary-light:var(--black-100);
 $text-primary-dark:var(--white-50);
 $text-secondary-light:var(--black-300);
 $text-secondary-dark:var(--white-200);
-// $text-tertiary-light:var(--black-700);
-$text-tertiary-light:red;
+$text-tertiary-light:var(--black-700);
 $text-tertiary-dark:var(--white-600);
 
 
@@ -191,7 +190,8 @@ $neutral-dark:var(--white-50);
 //text color
 $text-color-primary-light:var(--black-200);
 $text-color-secondary-light:var(--black-300);
-$text-color-tertiary-light:var(--black-400);
+$text-color-tertiary-light:var(--black-100);
+
 
 $text-color-primary-dark:var(--white-50);
 $text-color-secondary-dark:var(--white-100);
