@@ -1,5 +1,5 @@
 @use '../../../../assets/styles/base/color' as colors;
-
+@use '../../../../assets/styles/base/typography' as typos;
 header {
     display: grid;
      grid-template-columns:repeat(3,1fr);
@@ -33,11 +33,6 @@ header {
       }
      }
 }
-
-
-
-
-
 nav{
    background-color: initial;
  }
@@ -53,6 +48,7 @@ nav{
       text-decoration: none;
       font-weight:500;
       color:colors.$nav-text;
+      font-weight: typos.$font-weight-medium;
     }
     a:hover{
       color:colors.$nav-text-hover;

@@ -1,1 +1,18 @@
-<p>task-details works!</p>
+<div class="container">
+    <img src="https://images.unsplash.com/photo-1721332153289-0c46dc38981b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+  <h1 class="title"><i class="bx bx-task"></i> {{ task.title }}</h1>
+  <p class="desc">
+    <i class="bx bx-message-square-detail"></i>{{ task.description }}
+  </p>
+  <div class="row">
+    <span> <label> Start date :</label> {{ task.start_date.seconds | date:'medium' }}</span>
+    <span> <label> End date :</label> {{ task.end_date.seconds | date:'medium' }}</span>
+  </div>
+  <div class="row">
+    <span> <label> Remainder :</label> {{ task.remainder }}</span>
+    <span> <label>Priority :</label> {{ task.priority }}</span>
+  </div>
+  <div class="row" style="margin-top:10px;">
+    <span><label>Status: </label> {{ task.status }}</span>
+  </div>
+</div>

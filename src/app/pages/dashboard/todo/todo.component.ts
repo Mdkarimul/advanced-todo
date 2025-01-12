@@ -17,6 +17,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Timestamp } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NotificationsService } from '../../../core/services/notifications.service';
 
 
 @Component({
@@ -32,11 +33,48 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 export class TodoComponent {
 
   router = inject(Router)
-
+  taskId:string|null = null;
+  notificationService = inject(NotificationsService);
 
  
-  seeTaskDetails(id:any){
+  seeTaskDetails(id:any,event:Event){
+    const HtmlElement = event.target as HTMLInputElement;
+    if(HtmlElement.tagName ==="I" , HtmlElement.classList.contains('bx') && HtmlElement.classList.contains('bx-checkbox')){
+      this.taskId = id;
+      HtmlElement.classList.remove('bx-checkbox')
+      HtmlElement.classList.add('bx-checkbox-checked');
+      return;
+    }else if(HtmlElement.tagName ==="I" , HtmlElement.classList.contains('bx') && HtmlElement.classList.contains('bx-checkbox-checked')){
+      this.taskId = null;
+      HtmlElement.classList.remove('bx-checkbox-checked')
+      HtmlElement.classList.add('bx-checkbox');
+      return;
+    }
     this.router.navigate(['/dashboard/taskdetails/',{id:id}]);
+  }
+
+  taskAction(event:Event){
+   const value = (event.target as HTMLSelectElement).value;
+   if(!this.taskId && value !==""){
+     this.notificationService.errorMessage('Please select atleast one task','Action');
+   }  
+  
+   if(value==="edit" && this.taskId){
+    //call edit function here
+    this.showModal();
+    const currentTask =  this.allTask.filter((task)=> task.id==this.taskId);
+    console.log(currentTask);
+    this.todoService.editTask(this.taskId);
+   }
+   if(value==="delete" && this.taskId){
+    //call delete function here
+     this.todoService.deleteTask(this.taskId).then((res)=>{
+      this.notificationService.successMessage(res as string,'Delete message');
+      this.getAllTask();
+     }).catch((error)=>{
+      this.notificationService.errorMessage(error,'Failed message');
+     });
+   }
   }
 
   
@@ -141,12 +179,10 @@ export class TodoComponent {
   //Get all task at one time ========================>
   getAllTask() {
     this.todoService.getAllTask().then((response) => {
-      console.log(response);
+      this.allTask = [];
       response.forEach((Task)=>{
         this.allTask.push(Task);
       })
-      console.log(this.allTask);
-      //this.allTask = response;
     });
   }
 

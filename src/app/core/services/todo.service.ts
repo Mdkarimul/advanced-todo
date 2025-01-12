@@ -1,8 +1,8 @@
 
 import { inject, Injectable, signal } from '@angular/core';
-import { Firestore,addDoc,setDoc,collection, getDoc, getDocs,query, where, doc, updateDoc } from '@angular/fire/firestore';
+import { Firestore,addDoc,setDoc,collection, getDoc, getDocs,query, where, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { from, Observable, of, single } from 'rxjs';
-import  { Todo } from '../models/todo';
+import  { Task, Todo } from '../models/todo';
 import { NotificationsService } from './notifications.service';
 
 
@@ -105,6 +105,42 @@ export class TodoService {
          return 'Failed to update document !';
     }
   
+}
+
+async getTaskById(taskId:string):Promise<Task | Error>  {
+  const docRef = doc(this.firestore,'Task',taskId);
+  let data:Task;
+  const docSnap = await getDoc(docRef);
+  if(docSnap.exists()){
+     data = {
+      title:  docSnap.data()['title'],
+      description:docSnap.data()['description'],
+      end_date:docSnap.data()['end_date'],
+      start_date:docSnap.data()['start_date'],
+      status:docSnap.data()['status'],
+      priority:docSnap.data()['priority'],
+      remainder:docSnap.data()['remainder']
+    }
+    return data;
+  }
+  return new Error("Document doesn't exit !");
+}
+
+
+async deleteTask(id:string){
+  try {
+   await deleteDoc(doc(this.firestore,'Task',id));
+   return "Task deleted successfully !"
+  }catch {
+   return  new Error('Failed to delete task !');
+  }
+
+ 
+ 
+}
+
+editTask(id:string) {
+
 }
 
 

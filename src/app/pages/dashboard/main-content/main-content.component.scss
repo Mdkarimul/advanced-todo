@@ -4,7 +4,6 @@
 .main-content{
     width: calc(100% - 250px);
     height:100vh;
-    border: 1px solid rgb(251, 255, 0);
     float: left;
     padding:0px;
     transition: .3s ease-in-out;
@@ -28,7 +27,6 @@ top: 0;
 background-color:colors.$bg-tertiary-light;
 padding: 10px;
 border-radius: 5px;
-border: 1px solid red;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -36,7 +34,7 @@ position: relative;
 }
 section {
 
-    padding: 20px 10px;
+    padding: 0px 10px;
 }
 
 .avatar,.avatar-mini {
