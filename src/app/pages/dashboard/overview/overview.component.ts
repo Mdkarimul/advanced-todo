@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-overview',
@@ -8,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrl: './overview.component.scss'
 })
 export class OverviewComponent {
+
+  canvas = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
+
+
+
+  ngAfterViewInit(){
+    
+
+}
+
+
+
+
+
+
 
 }
