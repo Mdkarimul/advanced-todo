@@ -1,14 +1,15 @@
 @use '../../../../assets/styles/base/color' as colors;
 @use '../../../../assets//styles//base/typography' as typo;
-.todo-container {
+.search-cont {
     width: 100%;
     height:fit-content;
     display: flex;
     justify-content:flex-start;
     column-gap:30px;
-    align-items: center;
+    align-items: center;  
+    border:none;
+    margin: 10px 5px;
 }
-
 .search-cont {
     flex-grow: 2;
     display: flex;
@@ -21,7 +22,6 @@
     position: absolute;
     width: 100%;
     height:fit-content;
-    z-index: 1000;
     top: 50px;
     border-radius: 5px;
     background-color:white;
@@ -59,8 +59,8 @@
 }
 
 .add-task {
-    width: fit-content;
-    padding: 10px 20px;
+    width:120px;
+    padding: 10px 10px;
     background-color:colors.$brand-primary;
     color: colors.$text-color-primary-dark;
     border: none;
@@ -71,6 +71,8 @@
     align-items: center;
     column-gap: 5px;
     font-weight: typo.$font-weight-semibold;
+     flex-grow: 0;
+     margin: auto 5px;
 }
 
 .task-list-cont {

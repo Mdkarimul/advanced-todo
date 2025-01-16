@@ -85,9 +85,6 @@ export class TodoComponent {
    }
   }
 
-  
-  
-
   todoService = inject(TodoService);
 
   allTask: any[] = [];
@@ -175,6 +172,7 @@ closePopup(){
     }
   }
   readSearchItem(input: HTMLInputElement, li: HTMLLIElement) {
+   
     const liContent: string = li.textContent ?? '';
     input.value = liContent;
     this.searchState.set(false);
@@ -187,7 +185,9 @@ closePopup(){
   // Get task by title ====================================>
   getTaskByTitle(title:string) {
     this.todoService.getDataByTitle(title).then((res)=>{
+      alert(res);
       this.allTask = [];
+      console.log(res)
       this.allTask.push(res);
     }).catch((error)=>{
       this.getAllTask();

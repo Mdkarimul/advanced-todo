@@ -78,13 +78,16 @@ export class TodoService {
   async getDataByTitle(title:string):Promise<any>{
       const q = await query(collection(this.firestore,'Task'), where('title', 'in', [title]));
       const querySnapShot = await getDocs(q);
+      console.log(querySnapShot);
       if(querySnapShot.empty){
+        alert('data not found !');
        throw new Error("Data not found !");
       }
       let data;
       querySnapShot.forEach((doc)=>{
         data = doc.data();
       })
+      alert(data)
       return data;
   }
 

@@ -3,31 +3,27 @@
    <div></div>
     <div class="avatar" #avatar (click)="showProfile()">
       <img src="/images/avatar.svg" width="20px" height="auto" alt="">
+      @if(collapseProfile()){
+        <div class="profile">
+           <div>
+              <div class="avatar-mini">
+                 <img src="/images/avatar.svg" width="20px" height="auto" alt="">
+               </div>
+               <div class="user-details">
+                 <h3>Md karimul islam</h3>
+                 <span>7mdkarigmail.com</span>
+               </div>
+           </div>
+           <ul>
+              <li><a>Settings</a></li>
+              <li><a>Help</a></li>
+           </ul>
+        </div>
+        }
     </div>
-
-
-@if(collapseProfile()){
-<div class="profile">
-   <div>
-      <div class="avatar-mini">
-         <img src="/images/avatar.svg" width="20px" height="auto" alt="">
-       </div>
-       <div class="user-details">
-         <h3>Md karimul islam</h3>
-         <span>7mdkarigmail.com</span>
-       </div>
-   </div>
-   <ul>
-      <li><a>Settings</a></li>
-      <li><a>Help</a></li>
-   </ul>
-</div>
-}
-
-
  </header>
+
  <section>
-   <img src="assets/images/avatar.svg" width="100px" height="auto" alt="">
     <router-outlet></router-outlet>
  </section>
  
