@@ -1,4 +1,5 @@
 @use '../../../../assets/styles/base/typography' as types;
+@use '../../../../assets/styles/base/color' as colors;
 
 footer{
     width: 100%;
@@ -6,6 +7,8 @@ footer{
     display:flex;
     justify-content: space-around;
     align-items: center;
+    background-color: colors.$bg-neutral-secondary-light;
+
 }
 
 ul {

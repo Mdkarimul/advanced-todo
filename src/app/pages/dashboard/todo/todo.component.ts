@@ -6,6 +6,7 @@ import {
   ElementRef,
   inject,
   signal,
+  TemplateRef,
   viewChild,
   viewChildren,
   ViewContainerRef,
@@ -35,6 +36,10 @@ export class TodoComponent {
   router = inject(Router)
   taskId:string|null = null;
   notificationService = inject(NotificationsService);
+  componentRef = ComponentRef<ModalComponent>;
+ 
+
+
 
  
   seeTaskDetails(id:any,event:Event){
@@ -53,7 +58,7 @@ export class TodoComponent {
     this.router.navigate(['/dashboard/taskdetails/',{id:id}]);
   }
 
-  taskAction(event:Event){
+  async taskAction(event:Event){
    const value = (event.target as HTMLSelectElement).value;
    if(!this.taskId && value !==""){
      this.notificationService.errorMessage('Please select atleast one task','Action');
@@ -61,16 +66,19 @@ export class TodoComponent {
   
    if(value==="edit" && this.taskId){
     //call edit function here
+
+    const currentTask = await this.allTask.filter((task)=> task.id==this.taskId);
+    this.#componentRef?.instance.formStatus.set(true);
     this.showModal();
-    const currentTask =  this.allTask.filter((task)=> task.id==this.taskId);
-    console.log(currentTask);
-    this.todoService.editTask(this.taskId);
+   this.#componentRef?.setInput('formdata',currentTask);
+   this.#componentRef?.setInput('formStatus',true);
    }
    if(value==="delete" && this.taskId){
     //call delete function here
      this.todoService.deleteTask(this.taskId).then((res)=>{
       this.notificationService.successMessage(res as string,'Delete message');
       this.getAllTask();
+      
      }).catch((error)=>{
       this.notificationService.errorMessage(error,'Failed message');
      });
@@ -78,8 +86,7 @@ export class TodoComponent {
   }
 
   
-  constructor() {
-  }
+  
 
   todoService = inject(TodoService);
 
@@ -94,16 +101,28 @@ export class TodoComponent {
 
 
 //Show model to add new task =====================================>
+
+closePopup(){
+  this.#componentRef?.instance.close.subscribe(() => {
+    this.#componentRef?.destroy();
+    this.todoService.blurSignal.set(false);
+    this.getAllTask();
+  });
+}
+
   showModal() {
     this.vcr()?.clear();
     this.#componentRef = this.vcr()?.createComponent(ModalComponent);
     this.todoService.blurSignal.set(true);
-    this.#componentRef?.instance.close.subscribe(() => {
-      this.#componentRef?.destroy();
-      this.todoService.blurSignal.set(false);
-    });
+    this.closePopup()
     this.#componentRef?.instance.task.subscribe((data) => {
-      this.todoService.createTask(data);
+      this.todoService.createTask(data).then((res)=>{
+        alert('res');
+       this.#componentRef?.instance.close.emit();
+       this.getAllTask();
+      }).catch((error)=>{
+
+      });
     });
   }
 

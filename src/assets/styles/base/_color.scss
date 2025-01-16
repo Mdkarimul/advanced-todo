@@ -84,17 +84,18 @@
 
 //bg color variables =================================>
 $bg-primary-light:var(--blue-400);
-$bg-primary-dark:var(--black-50);
 $bg-secondary-ligth:var(--blue-300);
-$bg-secondary-dark:var(--black-100);
 $bg-tertiary-light:var(--blue-200);
+
+$bg-primary-dark:var(--black-50);
+$bg-secondary-dark:var(--black-100);
 $bg-tertiary-dark:var(--black-200);
 
-$bg-neutral-primary-light:var(--white-100);
-$bg-neutral-secondary-light:var(--white-200);
+$bg-neutral-primary-light:var(--white-50);
+$bg-neutral-secondary-light:var(--white-100);
 
-$bg-neutral-primary-dark:var(--black-200);
-$bg-neutral-secondary-dark:var(--black-400);
+$bg-neutral-primary-dark:var(--black-100);
+$bg-neutral-secondary-dark:var(--black-500);
 
 //brand colors variable ======================>>>>>>
 $brand-primary:var(--purple-200);
@@ -102,73 +103,52 @@ $brand-secondary:var(--purple-600);
 
 
 
-//text color variables ===================================>>>>>>
-$text-primary-light:var(--black-100);
-$text-primary-dark:var(--white-50);
-$text-secondary-light:var(--black-300);
-$text-secondary-dark:var(--white-200);
-$text-tertiary-light:var(--black-700);
-$text-tertiary-dark:var(--white-600);
-
-
-$text-success-primary-light:var(--green-600);
-$text-success-primary-dark:var(--green-400);
-
-$text-warning-primary-light:var(--orange-300);
-$text-warning-primary-dark:var(--orange-600);
-
-$text-danger-primary-light:var(--red-400);
-$text-danger-primary-dark:var(--red-600);
-
-$text-danger-secondary-light:var(--red-100);
-$text-danger-secondary-dark:var(--red-300);
 
 
 
-//nav variables
-$nav-bg:var(--blue-600);
-$nav-bg-surface-light:var(--blue-800);
-$nav-bg-surface-light-hover:var(--blue-900);
-$nav-bg-surface-light-active:var(--blue-600);
-$nav-bg-surface-light-selected:var(--blue-500);
 
-$nav-bg-surface-dark:var(--blue-600);
-$nav-bg-surface-dark-hover:var(--blue-700);
-$nav-bg-surface-dark-active:var(--blue-400);
-$nav-bg-surface-dark-selected:var(--blue-300);
 
-$nav-text:var(--black-100);
-$nav-text-hover:var(--blue-900);
-$nav-text-active:var(--black-100);
-$nav-text-selected:var(--black-300);
-$nav-text-disabled:var(--black-500);
 
-//neutral color
-$neutral-light:var(--black-50);
-$neutral-dark:var(--white-50);
 
-//text color
+
+
+//text color ============================================>
 $text-color-primary-light:var(--black-200);
-$text-color-secondary-light:var(--black-300);
-$text-color-tertiary-light:var(--black-100);
+$text-color-secondary-light:var(--black-400);
+$text-color-tertiary-light:var(--black-700);
+
+$text-color-primary-dark:var(--white-100);
+$text-color-secondary-dark:var(--white-200);
+$text-color-tertiary-dark:var(--white-300);
 
 
-$text-color-primary-dark:var(--white-50);
-$text-color-secondary-dark:var(--white-100);
-$text-color-tertiary-dark:var(--white-200);
-
-
-//brand color
+//brand color =======================================>
 $brand-primary:var(--purple-300);
 $brand-secondary:var(--purple-200);
+$brand-tertiary:var(--purple-100);
 
-//input
+//input colors ========================================>
 $input-subface-light:var(--white-100);
 $input-surface-dark:var(--black-100);
 $input-border-light:var(--black-300);
 $input-border-dark:var(--black-300);
 
 
+
+
+// Accent colors ======================================>
+$text-danger-primary-light:var(--red-400);
+$text-danger-secondary-light:var(--red-300);
+$text-danger-tertiary-light:var(--red-200);
+
+
+$text-warning-primary-light:var(--orange-300);
+$text-warning-secondary-light:var(--orange-200);
+$text-warning-tertiary-light:var(--orange-100);
+
+$text-success-primary-light:var(--green-400);
+$text-success-secondary-light:var(--green-300);
+$text-success-tertiary-light:var(--green-200);
 
 
 

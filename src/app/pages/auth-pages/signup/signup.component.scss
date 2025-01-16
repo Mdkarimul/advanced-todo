@@ -4,7 +4,7 @@
 .signup-cont {
     width: 100%;
     height:auto;
-    background-color:colors.$neutral-light;
+    background-color:colors.$bg-neutral-primary-dark;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +36,8 @@
                 margin: 5px auto;
                 border-radius: 5px;
                 font-size:type.$font-size-default;
+                font-weight: type.$font-weight-medium;
+                 color: colors.$text-color-tertiary-dark;
             }
             input[type=submit] {
                 margin: 15px auto;

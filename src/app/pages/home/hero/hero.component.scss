@@ -4,11 +4,12 @@
 .hero{
     width: 100%;
     height:calc(100vh - 60px);
-    background-color:colors.$bg-secondary-ligth;
+    background-color:colors.$bg-neutral-primary-dark;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
     > div {
         width: fit-content;
         padding: 10px;

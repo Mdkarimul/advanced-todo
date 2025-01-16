@@ -17,69 +17,8 @@ body {
 }
 
 
-// Heading classes =============>
-.heading-xxlarge {
-    font-size: 36px;
-    font-weight: 600;
- }
- .heading-xlarge {
-     font-size: 32px;
-     font-weight: 600;
-  }
  
-  .heading-large {
-     font-size: 28px;
-     font-weight: 600;
-  }
-  .heading-default {
-     font-size: 24px;
-     font-weight: 600;
-  }
-  .heading-small {
-     font-size:20px;
-     font-weight: 600;
-  }
-  .heading-xsmall {
-     font-size: 36px;
-     font-weight: 600;
-  }
- 
- 
- 
- //  Body classes ===========>
- .text-light-small {
-     font-size: 12px;
-     font-weight: 300;
- }
- .text-light-default {
-     font-size: 14px;
-     font-weight: 300;
- }
- .text-light-large {
-     font-size: 16px;
-     font-weight: 300;
- }
- .text-light-xlarge {
-     font-size: 18px;
-     font-weight: 300;
- }
- 
- .text-regular-small {
-     font-size: 12px;
-     font-weight: 400;
- }
- .text-regular-default {
-     font-size: 14px;
-     font-weight: 400;
- }
- .text-regular-large {
-     font-size: 16px;
-     font-weight: 400;
- }
- .text-regular-xlarge {
-     font-size: 18px;
-     font-weight: 400;
- }
+
  
  :root {
      --white-50:#ffffff;
@@ -164,24 +103,18 @@ body {
 
 
 
-
-
-
-
-/* button states are :->
-icon => after / below / none / only
-state => default / hover / active / selected / disabled 
-spacing => compact / default
-loading => false / true
-*/
-
 .btn-primary {
     padding: 10px 15px;
     border: none;
-    background-color:var(--purple-500);
-    color:var(--white-200);
+    background-color: var(--purple-500);
+    color: var(--white-200);
     font-size: 1.2rem;
-    border-radius: 5px;
+    border-radius:5px;
     cursor: pointer;
 }
+
+
+
+
+
 

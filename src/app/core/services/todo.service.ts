@@ -126,6 +126,20 @@ async getTaskById(taskId:string):Promise<Task | Error>  {
   return new Error("Document doesn't exit !");
 }
 
+async updateTasK(taskId:string,data:any):Promise<string>{
+
+  try{
+    const docRef = doc(this.firestore,'Task',taskId);
+    const update = await updateDoc(docRef,data);
+    return "Date updated successfully!"
+  }catch(error) {
+    return "Faild to update data!";
+  }
+
+ 
+
+}
+
 
 async deleteTask(id:string){
   try {

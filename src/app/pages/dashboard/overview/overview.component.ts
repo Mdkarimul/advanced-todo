@@ -1,6 +1,6 @@
 import { Component, ElementRef, viewChild } from '@angular/core';
-import { Chart } from 'chart.js';
-
+import { Chart,registerables } from 'chart.js';
+Chart.register(...registerables);
 @Component({
   selector: 'app-overview',
   standalone: true,
@@ -10,13 +10,54 @@ import { Chart } from 'chart.js';
 })
 export class OverviewComponent {
 
-  canvas = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
+  canvas1 = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas1');
+  canvas2 = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas2');
 
 
 
   ngAfterViewInit(){
-    
+    this.renderChart();
+}
 
+renderChart() {
+  new Chart(this.canvas1().nativeElement, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // chart 2
+  new Chart(this.canvas2().nativeElement, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 }
 
 

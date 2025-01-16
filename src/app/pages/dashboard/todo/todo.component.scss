@@ -62,7 +62,7 @@
     width: fit-content;
     padding: 10px 20px;
     background-color:colors.$brand-primary;
-    color: colors.$text-primary-dark;
+    color: colors.$text-color-primary-dark;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -70,6 +70,7 @@
     justify-content:center;
     align-items: center;
     column-gap: 5px;
+    font-weight: typo.$font-weight-semibold;
 }
 
 .task-list-cont {
@@ -98,7 +99,7 @@
                 padding: 8px;
                 margin: 5 10px;
                 appearance:none;
-                border: none;
+                border:1px solid colors.$brand-secondary;
                 outline: none;
                 background-color: colors.$bg-neutral-primary-light;
                 border-radius: 5px;

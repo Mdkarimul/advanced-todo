@@ -1,6 +1,6 @@
 <div class="sidenav" [style.width]="this.sideNavService.sideNavWidth">
     <div class="logo-container">
-        <a routerLink="/dashboard" [style.display]="!this.sideNavService.collapse() ? 'block' : 'none' "> <img  class="logo" src="https://i.pinimg.com/736x/31/14/5e/31145e7925e59e8fb344f13422435dba.jpg"  alt="lgo"></a>
+        <a routerLink="/dashboard" [style.display]="!this.sideNavService.collapse() ? 'block' : 'none' "> <img  class="logo" src="images/main-logo.png"  alt="lgo"></a>
         @if(this.sideNavService.collapse()){
           <i (click)="collapseMenu()" class='bx bx-chevrons-right'></i>
         }@else {

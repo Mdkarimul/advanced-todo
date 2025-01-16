@@ -49,10 +49,12 @@ ul {
              overflow: hidden;
              margin:0px 10px;
              border-radius: 5px;
-             font-weight:type.$font-weight-regular;
+             font-weight:type.$font-weight-medium;
+             color: colors.$text-color-tertiary-light;
         }
         a.active{
             background-color: colors.$bg-tertiary-light;
+
         }
     }
 }

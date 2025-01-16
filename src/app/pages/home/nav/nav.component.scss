@@ -11,8 +11,6 @@ header {
       align-items: center;
       .logo{
         padding:0px 20px;
-        font-size:1.5rem;
-        color:colors.$brand-primary;
         font-weight: bold;
         object-fit: contain;
      }
@@ -47,14 +45,11 @@ nav{
     a{
       text-decoration: none;
       font-weight:500;
-      color:colors.$nav-text;
+      color:colors.$text-color-primary-light;
       font-weight: typos.$font-weight-medium;
     }
     a:hover{
-      color:colors.$nav-text-hover;
-    }
-    a:active{
-      color: colors.$nav-text-active;
+      color:colors.$text-color-tertiary-light;
     }
   }
 }

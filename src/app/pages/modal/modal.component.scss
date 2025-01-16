@@ -6,7 +6,7 @@
 }
 
 .modal-container {
-    width:400px;
+    width:40vw;
     height:fit-content;
     background-color:colors.$bg-secondary-ligth;
     position: absolute;
@@ -19,7 +19,7 @@
 }
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-end;
     align-items:flex-start;
     margin: 10px auto;
     i {
@@ -28,15 +28,15 @@
         border-radius: 5px;
         padding: 5px;
         transition: .3s;
+        color: colors.$text-color-primary-light;
     }
     i:hover {
         background-color: colors.$bg-neutral-secondary-light;
     }
     h3 {
         margin-bottom:8px;
-        color: colors.$bg-neutral-secondary-dark;
+        color:rgba(0, 0, 0, 0.2);
         font-size: types.$font-size-md;
-
     }
 }
 .title {
@@ -53,27 +53,39 @@ input,textarea {
     outline:none;
     border: none;
     border-radius: 2px;
-    font-size:types.$font-size-sm;
     resize: none;
     padding: 10px;
     letter-spacing:1px;
     font-family: "Roboto Slab", serif;
-    color: colors.$text-color-tertiary-light!important;
+    font-size:types.$font-size-sm;
+    font-weight: types.$font-weight-medium;
+     color: colors.$text-color-tertiary-dark;
 }
 .footer {
     display: flex;
     justify-content: flex-end;
+    margin: 30px auto;
 
 }
-.btn-group {
-    margin:18px auto;
+.select-group {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    margin-bottom: 5px;
 }
-.btn-group select {
-    padding: 10px 5px;
-    margin: auto 5px;
-    outline: none;
-    border: none;
+.select-group select {
+    border: 1px solid colors.$bg-neutral-secondary-dark;
+    outline:none;
     border-radius: 3px;
+    padding: 9px 10px;
+    letter-spacing:1px;
+    font-family: "Roboto Slab", serif;
+    font-size:types.$font-size-sm;
+    font-weight: types.$font-weight-medium;
+     color: colors.$text-color-tertiary-dark;
+     position: relative;
 }
 
 .submit,.cancle {
@@ -113,11 +125,9 @@ input,textarea {
     row-gap: 5px;
 }
 
-.select-time .start-time label,
-.select-time .end-time label,
-.select-date .start-date label,
-.select-date .end-date label {
+label {
     font-size:types.$font-size-xs;
+    color: colors.$text-warning-secondary-light;
 }
 
 .select-date input , .select-time input {
