@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, input, Input, OnInit, Output } from '@angular/core';
 import { SidenavService } from '../../../core/services/sidenav.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
@@ -13,14 +13,18 @@ import { CommonModule } from '@angular/common';
 })
 export class LeftSidebarComponent implements OnInit {
 
+  width:number = 0;
   constructor(){
-
   }
 
 
   ngOnInit(): void {
   }
+
   @Output() collapse = new EventEmitter<boolean>(false);
+  screenWidth = input<number>();
+
+
 
   sideNavService = inject(SidenavService);
   authService = inject(AuthService);

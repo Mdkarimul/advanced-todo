@@ -1,4 +1,4 @@
-<div class="main-content" [class]="!this.sideNavService.collapse() ? 'max' : 'min'">
+<div class="main-content"  [class]="this.sideNavService.collapse()" [class]="!this.sideNavService.collapse() && this.sideNavService.position() == 'default' ? 'max' : 'min'">
  <header>
    <div></div>
     <div class="avatar" #avatar (click)="showProfile()">

@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
-import { Component, ElementRef, EventEmitter, inject, Input, input, Output, output, signal, viewChild, viewChildren } from '@angular/core';
-import { NgModel ,FormsModule,FormControl} from '@angular/forms';
+import { Component, ElementRef, EventEmitter, inject, Input, input, Output, output, signal, ViewChild, viewChild, viewChildren } from '@angular/core';
+import { NgModel ,FormsModule,FormControl, NgForm} from '@angular/forms';
 import { TodoService } from '../../core/services/todo.service';
 import { NotificationsService } from '../../core/services/notifications.service';
 import { TodoComponent } from '../dashboard/todo/todo.component';
@@ -80,9 +80,10 @@ updateForm(){
 
 
 
-
+@ViewChild('taskForm') actorForm!: NgForm;
 close = output<void>();
 @Output() task = new EventEmitter<{title:string,description:string,start_date:Date,end_date:Date}>();
+
 submitForm() {
   const data = {
     title:this.title,
@@ -93,7 +94,17 @@ submitForm() {
     remainder:Boolean(this.remainder),
     status: 'pending'
   }
- this.task.emit(data);
+
+ if(this.actorForm.valid){
+  this.task.emit(data);
+ }else {
+    this.notificationService.errorMessage('Please fill all the fields','Error message');
+ }
+  
+
+
+
+
 }
 
 }

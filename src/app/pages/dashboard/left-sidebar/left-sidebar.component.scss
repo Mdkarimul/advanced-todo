@@ -68,3 +68,11 @@ ul {
     border-radius: 5px;
     height:50px;
 }
+.fixed {
+    position:sticky;
+    top:0px;
+    left: 0px;
+    z-index: 100;
+}
+
+

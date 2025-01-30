@@ -12,7 +12,6 @@ import { SidenavService } from '../../../core/services/sidenav.service';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-
   collapseMenu(eventData:boolean){
 console.log(Event);
   }
@@ -24,7 +23,7 @@ console.log(Event);
   onResize(){
   this.screenWidth.set(window.innerWidth);
   if(this.screenWidth() < 768){
-    alert('resize');
+    this.sideNavService.position.set('overlay');
     this.sideNavService.collapse.set(true);
   }
   }

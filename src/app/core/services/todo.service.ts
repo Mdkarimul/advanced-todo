@@ -19,7 +19,7 @@ export class TodoService {
    private firestore = inject(Firestore);
    public formState = signal(false);
    private notificationService = inject(NotificationsService);
-
+   
 
 
   //  Create a new task here==================>
@@ -76,11 +76,9 @@ export class TodoService {
   }
 
   async getDataByTitle(title:string):Promise<any>{
-      const q = await query(collection(this.firestore,'Task'), where('title', 'in', [title]));
-      const querySnapShot = await getDocs(q);
-      console.log(querySnapShot);
+      const q =await query(collection(this.firestore,'Task'), where("title", '==',title));
+      const querySnapShot = await  getDocs(q);
       if(querySnapShot.empty){
-        alert('data not found !');
        throw new Error("Data not found !");
       }
       let data;

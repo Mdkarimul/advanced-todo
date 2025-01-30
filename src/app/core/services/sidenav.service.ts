@@ -9,9 +9,14 @@ export class SidenavService {
   }
 
   collapse: WritableSignal<boolean> = signal(false);
-
+  position: WritableSignal<string> = signal('default');
   toggle() {
     this.collapse.set(!this.collapse());
+    if(window.innerWidth < 768){
+      this.position.set('overlay');
+    }else {
+      this.position.set('default');
+    }
   }
 
   getWindowWidth(){

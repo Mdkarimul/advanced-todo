@@ -1,11 +1,12 @@
 <div class="search-cont">
 
     <button (click)="showModal()" class="add-task">
-        Add task<i class="bx bx-message-square-add"></i>
+      <span> Add task</span>
+          <i class="bx bx-message-square-add"></i>
         
     </button>
  
-  <div class="search-cont">
+  <div class="search-input-cont">
     <input
       (input)="getInput($event)"
       #searchInput
